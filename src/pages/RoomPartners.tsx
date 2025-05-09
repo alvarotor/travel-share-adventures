@@ -4,8 +4,8 @@ import { useLocation, Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/button';
 import { MessageSquare, Star, Calendar, Check, MapPin } from 'lucide-react';
 
 // Mock data for potential partners
