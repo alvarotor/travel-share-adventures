@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { format } from "date-fns";
@@ -22,6 +23,7 @@ const popularCities = [
 ];
 
 const SearchForm = () => {
+  const navigate = useNavigate();
   const [location, setLocation] = useState("");
   const [checkIn, setCheckIn] = useState<Date>();
   const [checkOut, setCheckOut] = useState<Date>();
@@ -50,8 +52,12 @@ const SearchForm = () => {
       return;
     }
     
-    // Form is valid
-    toast.success("Searching for roommates! This feature will be available soon.");
+    // Form is valid - navigate to room partners page with query params
+    const cityLabel = popularCities.find(city => city.value === location)?.label || location;
+    const checkInStr = checkIn ? format(checkIn, "MMM dd, yyyy") : '';
+    const checkOutStr = checkOut ? format(checkOut, "MMM dd, yyyy") : '';
+    
+    navigate(`/room-partners?location=${cityLabel}&checkIn=${checkInStr}&checkOut=${checkOutStr}`);
   };
   
   return (

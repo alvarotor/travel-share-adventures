@@ -1,10 +1,16 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { cn } from '@/lib/utils';
 
 const Navbar = ({ className }: { className?: string }) => {
+  const location = useLocation();
+  const currentPath = location.pathname;
+  
+  // Helper to determine if a link is active
+  const isActive = (path: string) => currentPath === path;
+  
   return (
     <nav className={cn("sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur", className)}>
       <div className="container flex h-16 items-center justify-between">
@@ -14,10 +20,42 @@ const Navbar = ({ className }: { className?: string }) => {
         </Link>
         
         <div className="hidden md:flex items-center gap-6">
-          <Link to="/" className="text-sm font-medium hover:text-travel-primary transition-colors">Home</Link>
-          <Link to="/how-it-works" className="text-sm font-medium hover:text-travel-primary transition-colors">How It Works</Link>
-          <Link to="/blog" className="text-sm font-medium hover:text-travel-primary transition-colors">Blog</Link>
-          <Link to="/about" className="text-sm font-medium hover:text-travel-primary transition-colors">About Us</Link>
+          <Link 
+            to="/" 
+            className={cn(
+              "text-sm font-medium transition-colors",
+              isActive('/') ? "text-travel-primary" : "hover:text-travel-primary"
+            )}
+          >
+            Home
+          </Link>
+          <Link 
+            to="/how-it-works" 
+            className={cn(
+              "text-sm font-medium transition-colors",
+              isActive('/how-it-works') ? "text-travel-primary" : "hover:text-travel-primary"
+            )}
+          >
+            How It Works
+          </Link>
+          <Link 
+            to="/blog" 
+            className={cn(
+              "text-sm font-medium transition-colors",
+              isActive('/blog') ? "text-travel-primary" : "hover:text-travel-primary"
+            )}
+          >
+            Blog
+          </Link>
+          <Link 
+            to="/about" 
+            className={cn(
+              "text-sm font-medium transition-colors",
+              isActive('/about') ? "text-travel-primary" : "hover:text-travel-primary"
+            )}
+          >
+            About Us
+          </Link>
         </div>
         
         <div className="flex items-center gap-4">
