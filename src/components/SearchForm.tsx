@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Calendar as CalendarIcon } from 'lucide-react';
 import { toast } from 'sonner';
+import { useTheme } from "@/contexts/ThemeContext";
 
 const popularCities = [
   { value: "new-york", label: "New York" },
@@ -24,6 +25,7 @@ const popularCities = [
 
 const SearchForm = () => {
   const navigate = useNavigate();
+  const { theme } = useTheme();
   const [location, setLocation] = useState("");
   const [checkIn, setCheckIn] = useState<Date>();
   const [checkOut, setCheckOut] = useState<Date>();
@@ -61,7 +63,15 @@ const SearchForm = () => {
   };
   
   return (
-    <form onSubmit={handleSearch} className="w-full max-w-3xl bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 animate-fade-in">
+    <form 
+      onSubmit={handleSearch} 
+      className={cn(
+        "w-full max-w-3xl rounded-xl shadow-lg overflow-hidden border animate-fade-in",
+        theme === "dark" 
+          ? "bg-sidebar border-gray-700" 
+          : "bg-white border-gray-100"
+      )}
+    >
       <div className="p-6 sm:p-8 grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="space-y-2">
           <label htmlFor="location" className="text-sm font-medium">
@@ -142,7 +152,10 @@ const SearchForm = () => {
         </div>
       </div>
       
-      <div className="px-6 sm:px-8 py-4 bg-gray-50 flex justify-end">
+      <div className={cn(
+        "px-6 sm:px-8 py-4 flex justify-end",
+        theme === "dark" ? "bg-sidebar-accent" : "bg-gray-50"
+      )}>
         <Button type="submit" className="bg-travel-primary hover:bg-travel-secondary text-white">
           Find Room Partners
         </Button>

@@ -2,12 +2,15 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
 import SearchForm from './SearchForm';
+import { useTheme } from "@/contexts/ThemeContext";
 
 type HeroSectionProps = {
   className?: string;
 };
 
 const HeroSection = ({ className }: HeroSectionProps) => {
+  const { theme } = useTheme();
+  
   return (
     <section 
       className={cn(
@@ -23,7 +26,12 @@ const HeroSection = ({ className }: HeroSectionProps) => {
           backgroundPosition: 'center',
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-travel-dark/70 to-travel-dark/50" />
+        <div className={cn(
+          "absolute inset-0", 
+          theme === "dark" 
+            ? "bg-gradient-to-r from-travel-dark/90 to-travel-dark/70" 
+            : "bg-gradient-to-r from-travel-dark/70 to-travel-dark/50"
+        )} />
       </div>
       
       {/* Content */}
@@ -63,7 +71,7 @@ const HeroSection = ({ className }: HeroSectionProps) => {
       
       {/* Wave separator */}
       <div className="absolute bottom-0 left-0 w-full overflow-hidden z-10">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" fill="#fff">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" fill={theme === "dark" ? "#1A1F2C" : "#fff"}>
           <path d="M0,96L80,85.3C160,75,320,53,480,58.7C640,64,800,96,960,96C1120,96,1280,64,1360,48L1440,32L1440,100L1360,100C1280,100,1120,100,960,100C800,100,640,100,480,100C320,100,160,100,80,100L0,100Z"></path>
         </svg>
       </div>
