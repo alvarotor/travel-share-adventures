@@ -96,17 +96,16 @@ const SearchForm = () => {
                 )}
               >
                 <CalendarIcon className="mr-2 h-4 w-4" />
-                {checkIn ? format(checkIn, "PPP") : <span>Pick a date</span>}
+                {checkIn ? format(checkIn, "MMM dd, yyyy") : <span>Pick a date</span>}
               </Button>
             </PopoverTrigger>
-            <PopoverContent className="w-auto p-0" align="start">
+            <PopoverContent className="w-auto p-0 z-50" align="start">
               <Calendar
                 mode="single"
                 selected={checkIn}
                 onSelect={setCheckIn}
                 initialFocus
                 disabled={(date) => date < new Date()}
-                className="pointer-events-auto"
               />
             </PopoverContent>
           </Popover>
@@ -127,17 +126,16 @@ const SearchForm = () => {
                 )}
               >
                 <CalendarIcon className="mr-2 h-4 w-4" />
-                {checkOut ? format(checkOut, "PPP") : <span>Pick a date</span>}
+                {checkOut ? format(checkOut, "MMM dd, yyyy") : <span>Pick a date</span>}
               </Button>
             </PopoverTrigger>
-            <PopoverContent className="w-auto p-0" align="start">
+            <PopoverContent className="w-auto p-0 z-50" align="start">
               <Calendar
                 mode="single"
                 selected={checkOut}
                 onSelect={setCheckOut}
                 initialFocus
                 disabled={(date) => (checkIn ? date <= checkIn : date <= new Date())}
-                className="pointer-events-auto"
               />
             </PopoverContent>
           </Popover>
