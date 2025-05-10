@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
@@ -60,9 +59,9 @@ const questions = [
 
 const HowItWorksDetail = () => {
   return (
-    <div className="w-full">
+    <div className="w-full border-none">
       {/* Detailed Process Steps */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white border-none">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1">
@@ -133,7 +132,7 @@ const HowItWorksDetail = () => {
       </section>
       
       {/* Key Features */}
-      <section className="py-16 bg-travel-background">
+      <section className="py-16 bg-travel-background border-none">
         <div className="container">
           <h2 className="text-3xl font-bold text-center mb-4">Our Key Features</h2>
           <p className="text-xl text-center text-muted-foreground max-w-2xl mx-auto mb-16">
@@ -158,7 +157,7 @@ const HowItWorksDetail = () => {
       </section>
       
       {/* Benefits */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white border-none">
         <div className="container">
           <h2 className="text-3xl font-bold text-center mb-4">Benefits of Room Sharing</h2>
           <p className="text-xl text-center text-muted-foreground max-w-2xl mx-auto mb-16">
@@ -206,7 +205,7 @@ const HowItWorksDetail = () => {
       </section>
       
       {/* FAQ Section */}
-      <section className="py-16 bg-travel-background">
+      <section className="py-16 bg-travel-background border-none">
         <div className="container">
           <h2 className="text-3xl font-bold text-center mb-4">Frequently Asked Questions</h2>
           <p className="text-xl text-center text-muted-foreground max-w-2xl mx-auto mb-16">
@@ -225,7 +224,7 @@ const HowItWorksDetail = () => {
       </section>
       
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-travel-primary to-travel-secondary text-white">
+      <section className="py-16 bg-gradient-to-r from-travel-primary to-travel-secondary text-white border-none">
         <div className="container text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to find your perfect travel roommate?</h2>
           <p className="text-xl max-w-2xl mx-auto mb-8">

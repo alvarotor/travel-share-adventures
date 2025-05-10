@@ -35,7 +35,7 @@ type HowItWorksProps = {
 
 const HowItWorks = ({ className }: HowItWorksProps) => {
   return (
-    <section className={cn("py-16 bg-travel-background", className)} id="how-it-works">
+    <section className={cn("py-16 bg-travel-background border-none", className)} id="how-it-works">
       <div className="container">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">How It Works</h2>
