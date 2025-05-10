@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils';
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { useTheme } from "@/contexts/ThemeContext";
 
 const blogPosts = [
   {
@@ -41,8 +42,13 @@ type BlogPreviewProps = {
 };
 
 const BlogPreview = ({ className }: BlogPreviewProps) => {
+  const { theme } = useTheme();
+  
   return (
-    <section className={cn("py-16 bg-gray-50", className)} id="blog">
+    <section className={cn(
+      "py-16 border-none", 
+      theme === "dark" ? "bg-travel-dark/30" : "bg-gray-50"
+    )} id="blog">
       <div className="container">
         <div className="flex flex-col md:flex-row md:items-center justify-between mb-12">
           <div>
@@ -62,7 +68,10 @@ const BlogPreview = ({ className }: BlogPreviewProps) => {
           {blogPosts.map((post, index) => (
             <Card 
               key={post.id} 
-              className="overflow-hidden hover-scale border-none shadow-md"
+              className={cn(
+                "overflow-hidden hover-scale border-none shadow-md",
+                theme === "dark" ? "bg-sidebar border-gray-700" : ""
+              )}
               style={{ animationDelay: `${index * 150}ms` }}
             >
               <div className="h-48 overflow-hidden">

@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { cn } from '@/lib/utils';
+import { useTheme } from "@/contexts/ThemeContext";
 
 const steps = [
   {
@@ -34,8 +35,17 @@ type HowItWorksProps = {
 };
 
 const HowItWorks = ({ className }: HowItWorksProps) => {
+  const { theme } = useTheme();
+  
   return (
-    <section className={cn("py-16 bg-travel-background border-none", className)} id="how-it-works">
+    <section 
+      className={cn(
+        "py-16 border-none", 
+        className, 
+        theme === "dark" ? "bg-travel-dark/20" : "bg-travel-background"
+      )} 
+      id="how-it-works"
+    >
       <div className="container">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">How It Works</h2>
@@ -48,7 +58,12 @@ const HowItWorks = ({ className }: HowItWorksProps) => {
           {steps.map((step, index) => (
             <div 
               key={step.number} 
-              className="relative flex flex-col items-center text-center p-6 rounded-xl bg-white border shadow-sm hover-scale"
+              className={cn(
+                "relative flex flex-col items-center text-center p-6 rounded-xl border shadow-sm hover-scale",
+                theme === "dark" 
+                  ? "bg-sidebar border-gray-700" 
+                  : "bg-white border-gray-200"
+              )}
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="w-16 h-16 mb-4 rounded-full bg-travel-primary/10 flex items-center justify-center text-2xl">
