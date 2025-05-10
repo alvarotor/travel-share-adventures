@@ -122,3 +122,12 @@
 .story-link * {
   @apply relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
 }
+
+/* Dark mode specific styles */
+.dark .glass {
+  @apply bg-black/20 backdrop-blur-lg border border-white/10;
+}
+
+.light .glass {
+  @apply bg-white/80 backdrop-blur-lg border border-black/5;
+}

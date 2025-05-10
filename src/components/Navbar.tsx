@@ -3,6 +3,7 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { cn } from '@/lib/utils';
+import ThemeSwitcher from './ThemeSwitcher';
 
 const Navbar = ({ className }: { className?: string }) => {
   const location = useLocation();
@@ -59,6 +60,7 @@ const Navbar = ({ className }: { className?: string }) => {
         </div>
         
         <div className="flex items-center gap-4">
+          <ThemeSwitcher />
           <Button variant="outline" className="hidden sm:inline-flex">Sign In</Button>
           <Button className="bg-travel-primary hover:bg-travel-secondary text-white">Sign Up</Button>
         </div>
