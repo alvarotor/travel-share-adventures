@@ -16,6 +16,11 @@ const Navbar = ({ className }: { className?: string }) => {
     <nav className={cn("sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur", className)}>
       <div className="container flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
+          <img 
+            src="/lovable-uploads/deb263dc-e5e1-4a24-9a8e-b43f25d1c100.png" 
+            alt="SplitStay Logo" 
+            className="h-8 w-auto" 
+          />
           <span className="text-2xl font-bold text-travel-primary">RoomMate</span>
           <span className="font-medium text-travel-accent">Travel</span>
         </Link>
