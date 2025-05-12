@@ -46,7 +46,7 @@ const mockProfiles = {
     interests: ["Photography", "Art", "Hiking", "Coffee", "Local food", "Cultural events"],
     languages: ["English (Native)", "Spanish (Intermediate)", "French (Basic)"],
     rating: 4.9,
-    reviews: 24,
+    reviewCount: 24,
     verified: true,
     compatibility: 92,
     joinDate: "January 2023",
@@ -77,7 +77,7 @@ const mockProfiles = {
         duration: "1 month"
       }
     ],
-    reviews: [
+    userReviews: [
       {
         author: "Michael Chen",
         rating: 5,
@@ -113,7 +113,7 @@ const mockProfiles = {
     interests: ["Technology", "Coffee", "Running", "Reading", "Craft beer", "Museums"],
     languages: ["English (Fluent)", "Mandarin (Native)", "Japanese (Basic)"],
     rating: 4.7,
-    reviews: 18,
+    reviewCount: 18,
     verified: true,
     compatibility: 85,
     joinDate: "March 2023",
@@ -144,7 +144,7 @@ const mockProfiles = {
         duration: "1 week"
       }
     ],
-    reviews: [
+    userReviews: [
       {
         author: "Sarah Johnson",
         rating: 5,
@@ -180,7 +180,7 @@ const mockProfiles = {
     interests: ["Languages", "Cooking", "Museums", "Dancing", "Books", "Markets"],
     languages: ["English (Fluent)", "Spanish (Native)", "French (Intermediate)", "Italian (Basic)"],
     rating: 4.8,
-    reviews: 32,
+    reviewCount: 32,
     verified: true,
     compatibility: 78,
     joinDate: "November 2022",
@@ -211,7 +211,7 @@ const mockProfiles = {
         duration: "1 month"
       }
     ],
-    reviews: [
+    userReviews: [
       {
         author: "Michael Chen",
         rating: 5,
@@ -247,7 +247,7 @@ const mockProfiles = {
     interests: ["Surfing", "Food", "Fitness", "Photography", "Hiking", "Local markets"],
     languages: ["English (Native)", "Spanish (Basic)"],
     rating: 4.6,
-    reviews: 15,
+    reviewCount: 15,
     verified: true,
     compatibility: 73,
     joinDate: "April 2023",
@@ -278,7 +278,7 @@ const mockProfiles = {
         duration: "10 days"
       }
     ],
-    reviews: [
+    userReviews: [
       {
         author: "Emma Garcia",
         rating: 5,
@@ -301,6 +301,7 @@ const mockProfiles = {
   }
 };
 
+// Now update the ProfilePage component to use the new property names
 const ProfilePage = () => {
   const { id } = useParams();
   const [currentImage, setCurrentImage] = useState(0);
@@ -437,7 +438,7 @@ const ProfilePage = () => {
                       <Star className="w-4 h-4 mr-3 text-travel-primary" />
                       <div>
                         <div className="text-sm font-medium">Rating</div>
-                        <div className="text-sm text-muted-foreground">{profile.rating} ({profile.reviews?.length} reviews)</div>
+                        <div className="text-sm text-muted-foreground">{profile.rating} ({profile.reviewCount} reviews)</div>
                       </div>
                     </div>
                     
@@ -519,7 +520,7 @@ const ProfilePage = () => {
                   <TabsTrigger value="about">About</TabsTrigger>
                   <TabsTrigger value="preferences">Preferences</TabsTrigger>
                   <TabsTrigger value="trips">Past Trips</TabsTrigger>
-                  <TabsTrigger value="reviews">Reviews ({profile.reviews?.length})</TabsTrigger>
+                  <TabsTrigger value="reviews">Reviews ({profile.userReviews?.length})</TabsTrigger>
                 </TabsList>
                 
                 <TabsContent value="about" className="space-y-6">
@@ -623,7 +624,7 @@ const ProfilePage = () => {
                       </h3>
                       
                       <div className="space-y-6">
-                        {profile.reviews?.map((review, index) => (
+                        {profile.userReviews?.map((review, index) => (
                           <div key={index} className="space-y-2">
                             <div className="flex items-center justify-between">
                               <div className="font-medium">{review.author}</div>
@@ -644,7 +645,7 @@ const ProfilePage = () => {
                             
                             <p className="text-muted-foreground text-sm">{review.comment}</p>
                             
-                            {index < profile.reviews.length - 1 && <Separator className="my-4" />}
+                            {index < profile.userReviews.length - 1 && <Separator className="my-4" />}
                           </div>
                         ))}
                       </div>

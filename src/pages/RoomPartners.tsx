@@ -21,7 +21,7 @@ const mockPartners = [
     interests: ["Photography", "Art", "Hiking"],
     languages: ["English", "Spanish"],
     rating: 4.9,
-    reviews: 24,
+    reviewCount: 24,
     verified: true,
     compatibility: 92,
   },
@@ -36,7 +36,7 @@ const mockPartners = [
     interests: ["Technology", "Coffee", "Running"],
     languages: ["English", "Mandarin"],
     rating: 4.7,
-    reviews: 18,
+    reviewCount: 18,
     verified: true,
     compatibility: 85,
   },
@@ -51,7 +51,7 @@ const mockPartners = [
     interests: ["Languages", "Cooking", "Museums"],
     languages: ["English", "Spanish", "French"],
     rating: 4.8,
-    reviews: 32,
+    reviewCount: 32,
     verified: true,
     compatibility: 78,
   },
@@ -66,7 +66,7 @@ const mockPartners = [
     interests: ["Surfing", "Food", "Fitness"],
     languages: ["English"],
     rating: 4.6,
-    reviews: 15,
+    reviewCount: 15,
     verified: true,
     compatibility: 73,
   },
@@ -156,7 +156,7 @@ const RoomPartners = () => {
                       <div className="flex items-center">
                         <Star className="w-4 h-4 text-yellow-500 fill-yellow-500 mr-1" />
                         <span className="font-medium">{partner.rating}</span>
-                        <span className="text-muted-foreground text-sm ml-1">({partner.reviews} reviews)</span>
+                        <span className="text-muted-foreground text-sm ml-1">({partner.reviewCount} reviews)</span>
                       </div>
                       
                       <div className="flex gap-2">
