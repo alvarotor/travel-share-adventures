@@ -34,13 +34,20 @@ const HeroSection = ({ className }: HeroSectionProps) => {
         )} />
       </div>
       
-      {/* Logo Image */}
+      {/* Logo Image - Updated with modern styling and animation */}
       <div className="relative z-10 mb-8 max-w-md w-full flex justify-center">
-        <img 
-          src="/lovable-uploads/deb263dc-e5e1-4a24-9a8e-b43f25d1c100.png" 
-          alt="SplitStay Logo" 
-          className="w-64 h-auto"
-        />
+        <div className={cn(
+          "p-3 rounded-2xl shadow-lg transition-all duration-300 hover:scale-105",
+          theme === "dark" 
+            ? "bg-travel-dark/50 backdrop-blur-lg border border-white/10" 
+            : "bg-white/70 backdrop-blur-lg border border-black/5"
+        )}>
+          <img 
+            src="/lovable-uploads/deb263dc-e5e1-4a24-9a8e-b43f25d1c100.png" 
+            alt="SplitStay Logo" 
+            className="w-64 h-auto rounded-xl animate-fade-in"
+          />
+        </div>
       </div>
       
       {/* Content */}
