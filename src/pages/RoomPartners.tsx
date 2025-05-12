@@ -163,7 +163,13 @@ const RoomPartners = () => {
                         <Button variant="outline" size="sm" className="flex items-center">
                           <MessageSquare className="w-4 h-4 mr-1" /> Message
                         </Button>
-                        <Button size="sm" className="bg-travel-primary">View Profile</Button>
+                        <Button 
+                          size="sm" 
+                          className="bg-travel-primary"
+                          asChild
+                        >
+                          <Link to={`/profile/${partner.id}`}>View Profile</Link>
+                        </Button>
                       </div>
                     </div>
                   </div>
