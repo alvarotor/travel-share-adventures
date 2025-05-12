@@ -14,7 +14,7 @@ const HeroSection = ({ className }: HeroSectionProps) => {
   return (
     <section 
       className={cn(
-        "relative min-h-[90vh] flex items-center justify-center px-4 py-20 overflow-hidden", 
+        "relative min-h-[90vh] flex flex-col items-center justify-center px-4 py-20 overflow-hidden", 
         className
       )}
     >
@@ -32,6 +32,15 @@ const HeroSection = ({ className }: HeroSectionProps) => {
             ? "bg-gradient-to-r from-travel-dark/90 to-travel-dark/70" 
             : "bg-gradient-to-r from-travel-dark/70 to-travel-dark/50"
         )} />
+      </div>
+      
+      {/* Logo Image */}
+      <div className="relative z-10 mb-8 max-w-md w-full flex justify-center">
+        <img 
+          src="/lovable-uploads/deb263dc-e5e1-4a24-9a8e-b43f25d1c100.png" 
+          alt="SplitStay Logo" 
+          className="w-64 h-auto"
+        />
       </div>
       
       {/* Content */}

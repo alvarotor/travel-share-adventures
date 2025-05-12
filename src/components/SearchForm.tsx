@@ -153,10 +153,13 @@ const SearchForm = () => {
       </div>
       
       <div className={cn(
-        "px-6 sm:px-8 py-4 flex justify-end",
+        "px-6 sm:px-8 py-4 flex justify-center", // Changed from 'justify-end' to 'justify-center'
         theme === "dark" ? "bg-sidebar-accent" : "bg-gray-50"
       )}>
-        <Button type="submit" className="bg-travel-primary hover:bg-travel-secondary text-white">
+        <Button 
+          type="submit" 
+          className="bg-travel-primary hover:bg-travel-secondary text-white w-full md:w-2/3" // Added w-full for mobile and w-2/3 for larger screens
+        >
           Find Room Partners
         </Button>
       </div>
