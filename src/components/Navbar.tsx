@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
@@ -66,7 +65,12 @@ const Navbar = ({ className }: { className?: string }) => {
         <div className="flex items-center gap-4">
           <ThemeSwitcher />
           <Button variant="outline" className="hidden sm:inline-flex">Sign In</Button>
-          <Button className="bg-travel-primary hover:bg-travel-secondary text-white">Sign Up</Button>
+          <Button 
+            className="bg-travel-primary hover:bg-travel-secondary text-white"
+            asChild
+          >
+            <Link to="/sign-up">Sign Up</Link>
+          </Button>
         </div>
       </div>
     </nav>
