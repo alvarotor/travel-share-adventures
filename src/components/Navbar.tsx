@@ -17,12 +17,11 @@ const Navbar = ({ className }: { className?: string }) => {
       <div className="container flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
           <img 
-            src="/lovable-uploads/deb263dc-e5e1-4a24-9a8e-b43f25d1c100.png" 
+            src="/lovable-uploads/logo.png" 
             alt="SplitStay Logo" 
             className="h-8 w-auto" 
           />
           <span className="text-2xl font-bold text-travel-primary">SplitStay</span>
-          <span className="font-medium text-travel-accent">Travel</span>
         </Link>
         
         <div className="hidden md:flex items-center gap-6">

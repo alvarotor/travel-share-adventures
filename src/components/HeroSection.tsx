@@ -43,7 +43,7 @@ const HeroSection = ({ className }: HeroSectionProps) => {
             : "bg-white/70 backdrop-blur-lg border border-black/5"
         )}>
           <img 
-            src="/lovable-uploads/deb263dc-e5e1-4a24-9a8e-b43f25d1c100.png" 
+            src="/lovable-uploads/logo-hero.png" 
             alt="SplitStay Logo" 
             className="w-64 h-auto rounded-xl animate-fade-in"
           />
