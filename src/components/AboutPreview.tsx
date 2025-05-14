@@ -17,7 +17,7 @@ const AboutPreview = ({ className }: AboutPreviewProps) => {
             <h2 className="text-3xl font-bold">We're Changing How Solo Travelers Find Accommodation</h2>
             
             <p className="text-lg text-muted-foreground">
-              RoomMate Travel was born from a simple idea: travel shouldn't be expensive for those exploring alone. Our platform connects solo travelers, backpackers, and budget-conscious tourists to share hotel rooms and split costs.
+              SplitStay Travel was born from a simple idea: travel shouldn't be expensive for those exploring alone. Our platform connects solo travelers, backpackers, and budget-conscious tourists to share hotel rooms and split costs.
             </p>
             
             <p className="text-muted-foreground">

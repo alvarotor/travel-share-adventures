@@ -11,7 +11,7 @@ const teamMembers = [
   {
     name: "Alex Chen",
     role: "Co-Founder & CEO",
-    bio: "Former travel blogger with 50+ countries under his belt. Started RoomMate Travel after sharing rooms with strangers across Southeast Asia.",
+    bio: "Former travel blogger with 50+ countries under his belt. Started SplitStay Travel after sharing rooms with strangers across Southeast Asia.",
     avatar: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=150&h=150&auto=format&dpr=2&q=80",
     initials: "AC"
   },
@@ -60,7 +60,7 @@ const About = () => {
         <section className="py-16 bg-travel-dark text-white">
           <div className="container">
             <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-4xl font-bold mb-6">About RoomMate Travel</h1>
+              <h1 className="text-4xl font-bold mb-6">About SplitStay Travel</h1>
               <p className="text-xl text-gray-300">
                 We're making travel more affordable and social by connecting compatible travelers
               </p>
@@ -75,7 +75,7 @@ const About = () => {
                 <h2 className="text-3xl font-bold mb-6">Our Story</h2>
                 <div className="space-y-4 text-muted-foreground">
                   <p>
-                    RoomMate Travel was born in 2024 when three avid travelers—Alex, Maria, and David—met while sharing a hostel room in Bangkok. Despite being strangers at first, they connected over their shared love for budget travel and authentic experiences.
+                    SplitStay Travel was born in 2024 when three avid travelers—Alex, Maria, and David—met while sharing a hostel room in Bangkok. Despite being strangers at first, they connected over their shared love for budget travel and authentic experiences.
                   </p>
                   <p>
                     During their conversation, they realized a common problem: hotels were too expensive for solo travelers, while hostels didn't always offer the privacy and comfort many people wanted. There had to be a middle ground.
@@ -84,7 +84,7 @@ const About = () => {
                     The idea was simple but powerful—create a platform where solo travelers could connect, share hotel rooms, split costs, and potentially make new friends along the way.
                   </p>
                   <p>
-                    Within months, the first version of RoomMate Travel was launched. Today, we've helped thousands of travelers across 120+ countries save money and forge meaningful connections while exploring the world.
+                    Within months, the first version of SplitStay Travel was launched. Today, we've helped thousands of travelers across 120+ countries save money and forge meaningful connections while exploring the world.
                   </p>
                 </div>
                 

@@ -13,7 +13,7 @@ const StatsSection = ({ className }: StatsSectionProps) => {
         <div className="text-center mb-10">
           <h2 className="text-3xl font-bold">Join Our Global Community</h2>
           <p className="text-lg text-white/80 max-w-2xl mx-auto mt-4">
-            Thousands of travelers are already saving money and making new friends through RoomMate Travel
+            Thousands of travelers are already saving money and making new friends through SplitStay Travel
           </p>
         </div>
         

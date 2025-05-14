@@ -7,7 +7,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 const testimonials = [
   {
     id: 1,
-    content: "I was nervous about sharing a room with a stranger, but RoomMate made it so easy to find someone compatible. We ended up becoming great friends and saving over $400 on our trip to Paris!",
+    content: "I was nervous about sharing a room with a stranger, but SplitStay made it so easy to find someone compatible. We ended up becoming great friends and saving over $400 on our trip to Paris!",
     name: "Sarah J.",
     location: "New York",
     avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&auto=format&dpr=2&q=80",

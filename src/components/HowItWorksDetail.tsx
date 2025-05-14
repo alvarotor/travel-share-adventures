@@ -136,7 +136,7 @@ const HowItWorksDetail = () => {
         <div className="container">
           <h2 className="text-3xl font-bold text-center mb-4">Our Key Features</h2>
           <p className="text-xl text-center text-muted-foreground max-w-2xl mx-auto mb-16">
-            We've designed RoomMate Travel with features that make finding a compatible travel roommate safe, easy, and enjoyable.
+            We've designed SplitStay Travel with features that make finding a compatible travel roommate safe, easy, and enjoyable.
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -228,7 +228,7 @@ const HowItWorksDetail = () => {
         <div className="container text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to find your perfect travel roommate?</h2>
           <p className="text-xl max-w-2xl mx-auto mb-8">
-            Join thousands of travelers who have saved money and made new friends through RoomMate Travel
+            Join thousands of travelers who have saved money and made new friends through SplitStay Travel
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button asChild size="lg" variant="default" className="bg-white text-travel-primary hover:bg-gray-100">

@@ -15,7 +15,7 @@ const Footer = ({ className }: FooterProps) => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-2">
-              <span className="text-2xl font-bold text-travel-primary">RoomMate</span>
+              <span className="text-2xl font-bold text-travel-primary">SplitStay</span>
               <span className="font-medium text-travel-accent">Travel</span>
             </Link>
             <p className="text-gray-300 text-sm">
@@ -79,7 +79,7 @@ const Footer = ({ className }: FooterProps) => {
         
         <div className="flex flex-col sm:flex-row justify-between items-center">
           <p className="text-sm text-gray-400">
-            &copy; {new Date().getFullYear()} RoomMate Travel. All rights reserved.
+            &copy; {new Date().getFullYear()} SplitStay Travel. All rights reserved.
           </p>
           
           <div className="flex space-x-4 mt-4 sm:mt-0">

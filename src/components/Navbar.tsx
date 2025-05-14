@@ -21,7 +21,7 @@ const Navbar = ({ className }: { className?: string }) => {
             alt="SplitStay Logo" 
             className="h-8 w-auto" 
           />
-          <span className="text-2xl font-bold text-travel-primary">RoomMate</span>
+          <span className="text-2xl font-bold text-travel-primary">SplitStay</span>
           <span className="font-medium text-travel-accent">Travel</span>
         </Link>
         
