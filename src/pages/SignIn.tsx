@@ -20,23 +20,16 @@ import {
 import { useTheme } from '@/contexts/ThemeContext';
 import { cn } from '@/lib/utils';
 
-// Define the form schema with validation rules
+// Define the form schema with validation rule
 const formSchema = z.object({
-  firstName: z.string().min(2, {
-    message: "First name must be at least 2 characters.",
-  }),
-  lastName: z.string().min(2, {
-    message: "Last name must be at least 2 characters.",
-  }),
   email: z.string().email({
     message: "Please enter a valid email address.",
   }),
-  phoneNumber: z.string().optional(),
 });
 
 type FormValues = z.infer<typeof formSchema>;
 
-const SignUp = () => {
+const SignIn = () => {
   const { theme } = useTheme();
   const navigate = useNavigate();
   
@@ -44,10 +37,7 @@ const SignUp = () => {
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      firstName: "",
-      lastName: "",
       email: "",
-      phoneNumber: "",
     },
   });
 
@@ -57,9 +47,9 @@ const SignUp = () => {
     console.log(values);
     
     // Show success message
-    toast.success("Account created successfully!");
+    toast.success("Signed in successfully!");
     
-    // Redirect to home page (or login) after successful sign up
+    // Redirect to home page after successful sign in
     setTimeout(() => navigate('/'), 1500);
   };
 
@@ -69,9 +59,9 @@ const SignUp = () => {
       <main className="flex-1 container py-16">
         <div className="max-w-md mx-auto">
           <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold">Sign Up</h1>
+            <h1 className="text-3xl font-bold">Sign In</h1>
             <p className="mt-2 text-muted-foreground">
-              Create your account to start sharing travel adventures
+              Welcome back to Travel Share Adventures
             </p>
           </div>
           
@@ -83,54 +73,12 @@ const SignUp = () => {
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                 <FormField
                   control={form.control}
-                  name="firstName"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>First Name*</FormLabel>
-                      <FormControl>
-                        <Input placeholder="Enter your first name" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                
-                <FormField
-                  control={form.control}
-                  name="lastName"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Last Name*</FormLabel>
-                      <FormControl>
-                        <Input placeholder="Enter your last name" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                
-                <FormField
-                  control={form.control}
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Email*</FormLabel>
+                      <FormLabel>Email</FormLabel>
                       <FormControl>
                         <Input type="email" placeholder="you@example.com" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                
-                <FormField
-                  control={form.control}
-                  name="phoneNumber"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Phone Number</FormLabel>
-                      <FormControl>
-                        <Input placeholder="(Optional)" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -141,16 +89,16 @@ const SignUp = () => {
                   type="submit" 
                   className="w-full bg-travel-primary hover:bg-travel-secondary transition-colors"
                 >
-                  Create Account
+                  Sign In
                 </Button>
               </form>
             </Form>
             
             <div className="mt-6 text-center text-sm">
               <p>
-                Already have an account?{" "}
-                <Link to="/sign-in" className="text-travel-primary hover:underline font-medium">
-                  Sign In
+                Don't have an account?{" "}
+                <Link to="/sign-up" className="text-travel-primary hover:underline font-medium">
+                  Sign Up
                 </Link>
               </p>
             </div>
@@ -162,4 +110,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default SignIn;

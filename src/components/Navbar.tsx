@@ -64,7 +64,13 @@ const Navbar = ({ className }: { className?: string }) => {
         
         <div className="flex items-center gap-4">
           <ThemeSwitcher />
-          <Button variant="outline" className="hidden sm:inline-flex">Sign In</Button>
+          <Button 
+            variant="outline" 
+            className="hidden sm:inline-flex"
+            asChild
+            >
+              <Link to="/sign-in">Sign In</Link>
+          </Button>
           <Button 
             className="bg-travel-primary hover:bg-travel-secondary text-white"
             asChild

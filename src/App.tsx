@@ -12,6 +12,7 @@ import HowItWorks from "./pages/HowItWorks";
 import RoomPartners from "./pages/RoomPartners";
 import ProfilePage from "./pages/ProfilePage";
 import SignUp from "./pages/SignUp";
+import SignIn from "./pages/SignIn";
 
 const queryClient = new QueryClient();
 
@@ -30,12 +31,13 @@ const App = () => (
             <Route path="/room-partners" element={<RoomPartners />} />
             <Route path="/profile/:id" element={<ProfilePage />} />
             <Route path="/sign-up" element={<SignUp />} />
+            <Route path="/sign-in" element={<SignIn />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
       </TooltipProvider>
-    </QueryClientProvider>
-  </ThemeProvider>
+    </QueryClientProvider> 
+  </ThemeProvider>  
 );
 
 export default App;
