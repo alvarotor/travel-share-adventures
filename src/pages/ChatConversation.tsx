@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import { useTheme } from "@/contexts/ThemeContext";
 
 const initialMessages = [
   {
@@ -33,12 +34,12 @@ const initialMessages = [
 const ChatConversation = () => {
   const [messages, setMessages] = useState(initialMessages);
   const [input, setInput] = useState("");
+  const { theme } = useTheme();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!input.trim()) return;
     const now = new Date();
-    // Format as "hh:mm AM/PM"
     const time = now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", hour12: true });
     setMessages([
       ...messages,
@@ -52,11 +53,18 @@ const ChatConversation = () => {
     setInput("");
   };
 
+  // Theme-based classes
+  const bgMain = theme === "dark" ? "bg-travel-dark" : "bg-travel-background";
+  const cardBg = theme === "dark" ? "bg-card border-gray-700" : "bg-white border-gray-200";
+  const bubbleOther = theme === "dark"
+    ? "bg-travel-dark/70 text-gray-100"
+    : "bg-travel-background text-gray-900";
+
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className={`flex min-h-screen flex-col ${bgMain}`}>
       <Navbar />
-      <main className="flex-1 flex flex-col items-center bg-travel-background py-8">
-        <div className="w-full max-w-md bg-white rounded-lg shadow p-6 flex flex-col">
+      <main className="flex-1 flex flex-col items-center py-8">
+        <div className={`w-full max-w-md rounded-lg shadow p-6 flex flex-col border ${cardBg}`}>
           <div className="mb-4 border-b pb-2">
             <h2 className="text-xl font-semibold">Chat with Sarah Johnson</h2>
             <span className="text-sm text-muted-foreground">Room Partner</span>
@@ -71,7 +79,7 @@ const ChatConversation = () => {
                   className={`px-4 py-2 rounded-lg ${
                     msg.sender === "You"
                       ? "bg-travel-primary text-white"
-                      : "bg-travel-background text-gray-900"
+                      : bubbleOther
                   }`}
                 >
                   <span>{msg.text}</span>
@@ -84,7 +92,7 @@ const ChatConversation = () => {
             <input
               type="text"
               placeholder="Type your message..."
-              className="flex-1 border rounded px-3 py-2 text-sm"
+              className={`flex-1 border rounded px-3 py-2 text-sm ${theme === "dark" ? "bg-travel-dark text-white border-gray-700" : ""}`}
               value={input}
               onChange={(e) => setInput(e.target.value)}
               autoFocus
