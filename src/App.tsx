@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import Index from "./pages/Index";
 import Blog from "./pages/Blog";
@@ -22,6 +22,7 @@ import FAQ from "@/pages/FAQ";
 import Terms from "@/pages/Terms";
 import Privacy from "@/pages/Privacy";
 import Cookies from "@/pages/Cookies";
+import ChatConversation from "@/pages/ChatConversation";
 
 const queryClient = new QueryClient();
 
@@ -31,7 +32,7 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter>
+        <Router>
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/blog" element={<Blog />} />
@@ -50,9 +51,10 @@ const App = () => (
             <Route path="/terms" element={<Terms />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/cookies" element={<Cookies />} />
+            <Route path="/chat/:partnerId" element={<ChatConversation />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </BrowserRouter>
+        </Router>
       </TooltipProvider>
     </QueryClientProvider> 
   </ThemeProvider>  

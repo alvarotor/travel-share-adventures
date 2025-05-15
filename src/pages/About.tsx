@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -89,9 +88,11 @@ const About = () => {
                 </div>
                 
                 <div className="mt-8 flex gap-4">
-                  <Button className="bg-travel-primary hover:bg-travel-secondary text-white">
-                    Join Our Community
-                  </Button>
+                  <Link to="/sign-in">
+                    <Button className="bg-travel-primary hover:bg-travel-secondary text-white">
+                      Join Our Community
+                    </Button>
+                  </Link>
                   <Link to="/contact">
                     <Button variant="outline">
                       Contact Us

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
@@ -160,8 +159,15 @@ const RoomPartners = () => {
                       </div>
                       
                       <div className="flex gap-2">
-                        <Button variant="outline" size="sm" className="flex items-center">
-                          <MessageSquare className="w-4 h-4 mr-1" /> Message
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="flex items-center"
+                          asChild
+                        >
+                          <Link to={`/chat/${partner.id}`}>
+                            <MessageSquare className="w-4 h-4 mr-1" /> Messages
+                          </Link>
                         </Button>
                         <Button 
                           size="sm" 

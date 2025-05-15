@@ -236,7 +236,7 @@ const HowItWorksDetail = () => {
             <Button asChild size="lg" variant="default" className="bg-white text-travel-primary hover:bg-gray-100">
               <Link to="/">Find a roommate</Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+            <Button asChild size="lg" variant="outline" className="bg-white text-travel-primary hover:bg-gray-100">
               <Link to="/about">Learn more about us</Link>
             </Button>
           </div>
