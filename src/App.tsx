@@ -14,6 +14,14 @@ import ProfilePage from "./pages/ProfilePage";
 import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
 import ContactUser from '@/pages/ContactUser';
+import Careers from "@/pages/Careers";
+import Press from "@/pages/Press";
+import Contact from "@/pages/Contact";
+import Safety from "@/pages/Safety";
+import FAQ from "@/pages/FAQ";
+import Terms from "@/pages/Terms";
+import Privacy from "@/pages/Privacy";
+import Cookies from "@/pages/Cookies";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +42,14 @@ const App = () => (
             <Route path="/sign-up" element={<SignUp />} />
             <Route path="/sign-in" element={<SignIn />} />
             <Route path="/contact-user/:id" element={<ContactUser />} />
+            <Route path="/careers" element={<Careers />} />
+            <Route path="/press" element={<Press />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/safety" element={<Safety />} />
+            <Route path="/faq" element={<FAQ />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/cookies" element={<Cookies />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
