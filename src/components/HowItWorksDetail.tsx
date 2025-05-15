@@ -14,6 +14,8 @@ import {
   Shield,
   Check
 } from 'lucide-react';
+import howItWorks from '@/assets/how-it-works.jpeg';
+
 
 const features = [
   {
@@ -122,8 +124,8 @@ const HowItWorksDetail = () => {
             
             <div className="order-1 lg:order-2">
               <img 
-                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVucHwwfHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" 
-                alt="People collaborating" 
+                src={howItWorks}
+                alt="How it works" 
                 className="w-full h-auto rounded-xl shadow-lg object-cover"
               />
             </div>

@@ -1,8 +1,8 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { Button } from "@/components/ui/button";
+import howTravellersChangeAccomodation from '@/assets/how-travelers-change-acommodation.jpeg';
 
 type AboutPreviewProps = {
   className?: string;
@@ -48,18 +48,11 @@ const AboutPreview = ({ className }: AboutPreviewProps) => {
             </div>
           </div>
           
-          <div className="relative h-[400px] lg:h-[500px] animate-slide-in-right">
-            <div className="absolute top-0 right-0 w-3/4 h-3/4 rounded-lg overflow-hidden shadow-xl">
+          <div className="relative h-[400px] lg:h-[500px] animate-slide-in-right flex items-center justify-center">
+            <div className="absolute inset-0 lg:w-[120%] left-1/2 -translate-x-1/2 rounded-lg overflow-hidden shadow-xl">
               <img 
-                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&auto=format&fit=crop&q=80" 
-                alt="Team working"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="absolute bottom-0 left-0 w-2/3 h-2/3 rounded-lg overflow-hidden shadow-xl border-4 border-white">
-              <img 
-                src="https://images.unsplash.com/photo-1605812860427-4024433a70fd?w=800&auto=format&fit=crop&q=80" 
-                alt="Travelers with map"
+                src={howTravellersChangeAccomodation}
+                alt="How travellers change accommodation"
                 className="w-full h-full object-cover"
               />
             </div>
