@@ -13,6 +13,7 @@ import RoomPartners from "./pages/RoomPartners";
 import ProfilePage from "./pages/ProfilePage";
 import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
+import ContactUser from '@/pages/ContactUser';
 
 const queryClient = new QueryClient();
 
@@ -32,6 +33,7 @@ const App = () => (
             <Route path="/profile/:id" element={<ProfilePage />} />
             <Route path="/sign-up" element={<SignUp />} />
             <Route path="/sign-in" element={<SignIn />} />
+            <Route path="/contact-user/:id" element={<ContactUser />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

@@ -508,8 +508,13 @@ const ProfilePage = () => {
                 </div>
                 
                 <div className="flex gap-3 w-full md:w-auto">
-                  <Button className="bg-travel-primary flex-1 md:flex-none" onClick={handleContactClick}>
-                    <MessageSquare className="w-4 h-4 mr-2" /> Contact {profile.name.split(' ')[0]}
+                  <Button
+                    asChild
+                    className="bg-travel-primary flex-1 md:flex-none"
+                  >
+                    <Link to={`/contact-user/${profile.id}`}>
+                      <MessageSquare className="w-4 h-4 mr-2" /> Contact {profile.name.split(' ')[0]}
+                    </Link>
                   </Button>
                 </div>
               </div>
