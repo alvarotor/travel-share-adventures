@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
@@ -364,9 +363,10 @@ const ProfilePage = () => {
                 <Button variant="outline" size="sm" onClick={handleContactClick}>
                   <Flag className="w-4 h-4 mr-1" /> Report
                 </Button>
-                <div className="hidden sm:block">
+                {/* REMOVE THE THEME SWITCHER FROM PROFILE PAGE */}
+                {/* <div className="hidden sm:block">
                   <ThemeSwitcher variant="switch" />
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
